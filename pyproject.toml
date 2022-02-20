@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "floship"
+version = "0.1.0"
+description = ""
+authors = ["polyarniik <rus.safiullin.01@mail.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "~=3.2"
+python-dotenv = "^0.19.2"
+django-choices = "^1.7.2"
+djangorestframework = "^3.13.1"
+serializers = "^0.2.4"
+views = "^0.3"
+psycopg2 = "^2.9.3"
+requests = "^2.27.1"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+pre-commit = "^2.17.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

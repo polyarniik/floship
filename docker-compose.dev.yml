@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:11.1-alpine
+    environment:
+      POSTGRES_USER: floship
+      POSTGRES_DB: floship
+      POSTGRES_PASSWORD: floship
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  db_store:
+    image: postgres:11.1-alpine
+    environment:
+      POSTGRES_USER: floship_store
+      POSTGRES_DB: floship_store
+      POSTGRES_PASSWORD: floship_store
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_store:/var/lib/postgresql/data
+
+  db_warehouse:
+    image: postgres:11.1-alpine
+    environment:
+      POSTGRES_USER: floship_warehouse
+      POSTGRES_DB: floship_warehouse
+      POSTGRES_PASSWORD: floship_warehouse
+    ports:
+      - "5434:5432"
+    volumes:
+      - db_warehouse:/var/lib/postgresql/data
+
+volumes:
+  db:
+  db_store:
+  db_warehouse:
